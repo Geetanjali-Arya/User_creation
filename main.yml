@@ -1,0 +1,13 @@
+---
+- name: Reset Linux User Password
+  hosts: 172.26.54.94
+  become: yes
+  vars:
+    new_password: "password"
+  tasks:
+    - name: Set User Password
+      user:
+        name: "ansible_user"
+        password: "{{ new_password | password_hash('sha512') }}"
+        update_password: always
+      when: new_password is defined
