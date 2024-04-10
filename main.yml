@@ -1,6 +1,6 @@
 ---
 - name: Reset Linux User Password
-  hosts: 172.26.54.94
+  hosts: all
   become: yes
   vars:
     new_password: "password"
