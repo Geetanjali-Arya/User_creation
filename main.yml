@@ -1,7 +1,6 @@
 ---
 - name: Reset Linux User Password
   hosts: all
-  become: yes
   vars:
     new_password: "password"
   tasks:
